@@ -5,6 +5,7 @@ import Cart from "@/components/Cart";
 import { useState } from "react";
 import { FileItemType, folders, FolderType } from "@/data/folder";
 import { CartProvider, useCart } from "@/context/CartContext";
+import Image from "next/image";
 
 function Content() {
   const [folderStack, setFolderStack] = useState<FolderType[]>([]);
@@ -97,8 +98,18 @@ function Content() {
                   className="border border-gray-200 p-4 rounded shadow hover:shadow-md transition flex justify-between items-center"
                 >
                   <div>
+                      <p className="text-md text-gray-600 mb-2">${file.price}</p>
+                    <div className="flex items-center gap-2">
+
+                    <Image
+                    src={'/assets/sheets.png'}
+                    alt="Excel icon"
+                    width={32}
+                    height={32}
+                    /> 
                     <p className="font-semibold">{file.name}</p>
-                    <p className="text-sm text-gray-600">${file.price}</p>
+                    </div>
+                   
                   </div>
                   <button
                     onClick={() => addToCart(file)}
@@ -138,11 +149,7 @@ function Content() {
   );
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout() {
   return (
     <html lang="en">
       <body className="h-screen flex flex-col lg:flex-row overflow-hidden">
