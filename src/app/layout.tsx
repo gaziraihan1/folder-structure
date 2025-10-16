@@ -98,7 +98,8 @@ function Content() {
                   className="border border-gray-200 p-4 rounded shadow hover:shadow-md transition flex justify-between items-center"
                 >
                   <div>
-                      <p className="text-md text-gray-600 mb-2">${file.price}</p>
+                    
+                      
                     <div className="flex items-center gap-2">
 
                     <Image
@@ -111,6 +112,13 @@ function Content() {
                     </div>
                    
                   </div>
+                  <div>
+
+                  {
+                      file.price && (
+                        <p className="text-md text-gray-600 mb-2 text-center">${`${file.price}.00`}</p>
+                      )
+                    }
                   <button
                     onClick={() => addToCart(file)}
                     disabled={alreadyInCart}
@@ -120,8 +128,9 @@ function Content() {
                         : "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
                     }`}
                   >
-                    {alreadyInCart ? "Added" : "Add to Cart"}
+                    {alreadyInCart ? "Added" : "Add to  List"}
                   </button>
+                  </div>
                 </div>
               );
             })}

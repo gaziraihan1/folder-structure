@@ -20,7 +20,7 @@ export default function Sidebar({ folders, onSelectFolder }: SidebarProps) {
       <h1 className="text-3xl font-bold mb-6 pt-2">
         FMS-Dashboard
       </h1>
-      <h2 className="text-xl font-bold mb-4">📁 Category</h2>
+      <h2 className="text-xl font-bold mb-4">📁 Categories</h2>
       <ul className="space-y-2">
         {folders.map((folder) => (
           <li
@@ -34,7 +34,7 @@ export default function Sidebar({ folders, onSelectFolder }: SidebarProps) {
           >
             📁 {folder.name} <br />
             <span className="text-[12px] text-[#666]">
-              {` Records (${folder.recordCount || "0"})`}
+              {` Leads (${folder.recordCount || "0"})`}
             </span>
           </li>
         ))}
