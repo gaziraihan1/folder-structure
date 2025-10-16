@@ -106,7 +106,7 @@ function Content() {
                     className={`px-3 py-1 rounded text-sm ${
                       alreadyInCart
                         ? "bg-gray-400 text-white cursor-not-allowed"
-                        : "bg-blue-600 text-white hover:bg-blue-700"
+                        : "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
                     }`}
                   >
                     {alreadyInCart ? "Added" : "Add to Cart"}
